@@ -1,0 +1,51 @@
+import { getPostBySlug } from '../../../lib/posts'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+
+  try {
+    const post = await getPostBySlug(slug)
+
+    if (!post) {
+      return {
+        title: 'Post not found',
+      }
+    }
+
+    return {
+      title: post.title,
+      description: post.excerpt || post.content.substring(0, 160),
+      openGraph: {
+        title: post.title,
+        description: post.excerpt || post.content.substring(0, 160),
+        type: 'article',
+        publishedTime: post.published_at,
+        modifiedTime: post.updated_at,
+        images: post.cover_image_url ? [{ url: post.cover_image_url }] : [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description: post.excerpt || post.content.substring(0, 160),
+        images: post.cover_image_url ? [post.cover_image_url] : [],
+      },
+    }
+  } catch (error) {
+    return {
+      title: 'Error loading post',
+    }
+  }
+}
+
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return children
+}
