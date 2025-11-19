@@ -169,7 +169,6 @@ Development Mode
 npm run dev
 
 
-Open your browser at http://localhost:3000
 
 You can now navigate the homepage, editor, and individual post pages.
 
