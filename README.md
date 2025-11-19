@@ -1,36 +1,201 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+TECHINSIGHT
 
-## Getting Started
+TechInsights is a modern blogging platform built with Next.js and Supabase. It allows users to create, manage, and read posts focused on technology, AI, data infrastructure, startups, and more. The platform includes a rich post editor, authentication, tagging, and responsive UI components for a seamless user experience.
 
-First, run the development server:
 
-```bash
+TABLE OF CONTENT
+
+
+Project Overview
+
+Features
+
+Technologies Used
+
+Project Structure
+
+Installation
+
+Running the Project
+
+Usage
+
+Future Improvements
+
+License
+
+Project Overview
+
+TechInsights provides a clean, user-friendly platform for sharing technical content. Users can:
+
+Write and publish posts
+
+Save drafts
+
+Add tags to categorize posts
+
+View posts with cover images, excerpts, and author information
+
+Navigate through posts via tags or homepage
+
+
+
+The platform is built with a mobile-first, responsive design using Tailwind CSS and follows modern web standards.
+
+Features
+
+Authentication: Users can sign up, log in, and log out.
+
+Editor:
+
+Title, slug, excerpt, content, and tags input
+
+Save posts as drafts or publish directly
+
+Auto-generate slug based on the title
+
+Dynamic UI with clear feedback for errors and loading states
+
+Post Management:
+
+View posts in a clean, card-based layout
+
+Detailed post pages with author info, published date, reading time, and tags
+
+Responsive Design: Optimized for mobile, tablet, and desktop
+
+UI/UX Enhancements:
+
+Fixed header for easy navigation
+
+Hover effects and smooth transitions on buttons and cards
+
+Clean, modern color scheme with white backgrounds and deep blue accents
+
+Technologies Used
+
+Framework: Next.js 13 (App Router)
+
+Styling: Tailwind CSS
+
+Database & Auth: Supabase
+
+Deployment: Vercel (recommended)
+
+Language: TypeScript
+
+Version Control: Git
+
+Project Structure
+/app
+  /editor            - Editor page for creating posts
+  /posts
+    /[slug]          - Dynamic post pages
+  /tags
+    /[tag]           - Dynamic tag pages
+/components
+  Header.tsx         - Navigation header
+  PostCard.tsx       - Post preview card
+  PostDetail.tsx     - Detailed post view
+/lib
+  posts.ts           - Functions for fetching posts and post details
+  supabase/client.ts - Supabase client initialization
+/public
+  placeholder.svg    - Default image placeholder
+
+Installation
+
+Clone the repository
+
+git clone https://github.com/your-username/techinsights.git
+cd techinsights
+
+
+Install dependencies
+
+npm install
+
+
+Set up environment variables
+
+Create a .env.local file at the root of your project:
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+
+Set up Supabase database
+
+Create tables: posts, tags, post_tags, users
+
+Ensure your tables have the following essential fields:
+
+Posts Table Example:
+
+id (uuid, primary key)
+
+author_id (uuid, foreign key)
+
+title (text)
+
+slug (text)
+
+excerpt (text)
+
+content (text)
+
+status (text: draft/published)
+
+published_at (timestamp)
+
+Tags Table Example:
+
+id (uuid, primary key)
+
+name (text)
+
+Post_Tags Table Example:
+
+id (uuid, primary key)
+
+post_id (uuid, foreign key)
+
+tag_id (uuid, foreign key)
+
+Running the Project
+
+Development Mode
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open your browser at http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can now navigate the homepage, editor, and individual post pages.
 
-## Learn More
+Production Build
 
-To learn more about Next.js, take a look at the following resources:
+npm run build
+npm start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Homepage
 
-## Deploy on Vercel
+View recent posts, popular tags, and navigate to editor pages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Creating a Post
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Click “Write” in the header (requires login).
+
+Fill in the title, excerpt, content, and tags.
+
+Click “Publish” or “Save as Draft”.
+
+Viewing Posts
+
+Click any post card to see full content, author info, published date, and tags.
+
+Filtering by Tags
+
+Click a tag to view all posts associated with that tag.
