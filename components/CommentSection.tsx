@@ -39,7 +39,7 @@ export default function CommentSection({ postId, user }: any) {
 
   return (
     <div className="mt-12 p-6 bg-gray-50 rounded-xl shadow">
-      <h3 className="font-bold text-xl mb-4">💬 Comments</h3>
+      <h3 className="font-bold text-black text-xl mb-4">💬 Comments</h3>
 
       {user ? (
         <form onSubmit={submitComment} className="space-y-3">

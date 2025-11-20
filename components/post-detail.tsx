@@ -128,10 +128,10 @@ export default function PostDetail({ post }: PostDetailProps) {
     <article className="max-w-2xl mx-auto px-4 py-12">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-pretty">{post.title}</h1>
+        <h1 className="text-4xl text-black font-bold mb-4 text-pretty">{post.title}</h1>
 
         {post.author && (
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center bg-black gap-4 mb-6">
             {post.author.avatar_url && (
               <Image
                 src={post.author.avatar_url || "/placeholder.svg"}
@@ -181,7 +181,7 @@ export default function PostDetail({ post }: PostDetailProps) {
       )}
 
       {/* Content */}
-      <div className="prose prose-sm dark:prose-invert max-w-none mb-12">
+      <div className="prose prose-sm dark:prose-invert max-w-none mb-12 text-black">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
 
@@ -213,7 +213,7 @@ export default function PostDetail({ post }: PostDetailProps) {
 
       {/* Comments */}
       <div className="space-y-6">
-        <h3 className="text-xl font-bold">Comments</h3>
+        <h3 className="text-xl  text-black font-bold">Comments</h3>
 
         {user && (
           <form onSubmit={handleComment} className="space-y-4">
@@ -222,12 +222,12 @@ export default function PostDetail({ post }: PostDetailProps) {
               onChange={(e) => setCommentText(e.target.value)}
               placeholder="Share your thoughts..."
               rows={4}
-              className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-black w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <button
               type="submit"
               disabled={loading || !commentText.trim()}
-              className="bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50"
+              className="bg-primary text-black text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50"
             >
               Post Comment
             </button>
@@ -250,7 +250,7 @@ export default function PostDetail({ post }: PostDetailProps) {
               </div>
             ))
           ) : (
-            <p className="text-muted-foreground text-center py-8">
+            <p className="text-black text-muted-foreground text-center py-8">
               No comments yet. Be the first to comment!
             </p>
           )}
