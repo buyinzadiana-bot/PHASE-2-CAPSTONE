@@ -5,6 +5,8 @@ import { createClient } from '@/lib/supabase/client'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
 import Link from 'next/link'
+import LikeSection from './LikeSection'
+import CommentSection from './CommentSection'
 
 interface PostDetailProps {
   post: any
@@ -205,6 +207,9 @@ export default function PostDetail({ post }: PostDetailProps) {
           </Link>
         )}
       </div>
+      <LikeSection postId={post.id} userId={user?.id || null} />
+
+<CommentSection postId={post.id} user={user} />
 
       {/* Comments */}
       <div className="space-y-6">
