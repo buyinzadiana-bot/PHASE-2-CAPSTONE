@@ -1,6 +1,8 @@
 
 ![](https://github.com/buyinzadiana-bot/PHASE-2-CAPSTONE/blob/ea588c840949eedc02b3e1fcb26d14b6551b8902/Screenshot%202025-11-24%20at%2009.00.29.png)
 ![](https://github.com/buyinzadiana-bot/PHASE-2-CAPSTONE/blob/a093e42a81563aa8b8ee2a2de0f58bd80c38a5f5/Screenshot%202025-11-24%20at%2009.00.38.png)
+![](https://github.com/buyinzadiana-bot/PHASE-2-CAPSTONE/blob/70f643479e5ac445cc907449d4129493085faff3/Screenshot%202025-11-24%20at%2009.00.55.png)
+
 TECHINSIGHT
 
 TechInsights is a modern blogging platform built with Next.js and Supabase. It allows users to create, manage, and read posts focused on technology, AI, data infrastructure, startups, and more. The platform includes a rich post editor, authentication, tagging, and responsive UI components for a seamless user experience.
