@@ -1,5 +1,5 @@
 
-!()[https://github.com/buyinzadiana-bot/PHASE-2-CAPSTONE/blob/ea588c840949eedc02b3e1fcb26d14b6551b8902/Screenshot%202025-11-24%20at%2009.00.29.png]
+![](https://github.com/buyinzadiana-bot/PHASE-2-CAPSTONE/blob/ea588c840949eedc02b3e1fcb26d14b6551b8902/Screenshot%202025-11-24%20at%2009.00.29.png)
 
 TECHINSIGHT
 
